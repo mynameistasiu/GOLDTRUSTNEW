@@ -1,0 +1,142 @@
+/* Page-specific styles: mature, wallet-grade look */
+
+:root {
+  --gt-gold: #d4af37;
+  --muted: #94a3b8;
+  --card-bg: #f7f7f8; /* neutral light default so black title is visible */
+  --card-border: rgba(15,15,15,0.06);
+  --selected-grad-from: #5a2b0f; /* brown */
+  --selected-grad-to: #2b0b3a;   /* dark purple */
+}
+
+.buy-wrap { padding: 28px 18px; max-width: 1100px; margin: 0 auto; }
+.hero { text-align:center; margin-bottom:18px; }
+.hero h1 { margin:0; font-size:28px; color:var(--gt-gold); font-weight:800; }
+.hero p { margin-top:8px; color:var(--muted); max-width:760px; margin-left:auto; margin-right:auto; }
+
+/* single row layout: use flex row (keeps both cards on one row; horizontal scroll on small screens) */
+.payment-grid {
+  display:flex;
+  gap:18px;
+  margin: 20px 0 28px;
+  justify-content:center;
+  align-items:stretch;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  padding-bottom:6px;
+}
+/* ensure cards have same width */
+.payment-grid > * { min-width:340px; max-width:460px; flex:0 0 420px; }
+
+.payment-card {
+  background: linear-gradient(180deg, var(--card-bg), #f0f0f1);
+  border-radius:14px;
+  padding:18px;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease, color .22s ease;
+  border:1px solid var(--card-border);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+  color: #071224; /* default text color (black) so titles show */
+}
+
+/* selected / hovered card: brown -> dark purple gradient + white text */
+.payment-card.selected,
+.payment-card:focus-within,
+.payment-card:hover {
+  background: linear-gradient(135deg, var(--selected-grad-from) 0%, var(--selected-grad-to) 100%);
+  color: #ffffff;
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* Title: black by default, white when selected */
+.card-title {
+  font-weight:800;
+  color:#071224; /* default black */
+  margin-bottom:6px;
+  font-size:20px;
+  transition: color .18s ease, text-shadow .18s ease;
+}
+.payment-card.selected .card-title {
+  color: #ffffff; /* white when selected */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.card-sub { color:var(--muted); font-size:13px; margin-bottom:10px; transition: color .18s ease; }
+.payment-card.selected .card-sub { color: rgba(255,255,255,0.85); }
+
+.price {
+  font-weight:900; font-size:22px; margin-bottom:10px;
+  background: linear-gradient(90deg,var(--gt-gold), #e6c871);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+/* when selected, make price slightly lighter to show on dark bg */
+.payment-card.selected .price { background: linear-gradient(90deg, rgba(255,255,255,0.92), rgba(255,255,255,0.75)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3)); }
+
+.icon-box {
+  width:84px; height:84px; border-radius:14px; display:flex; align-items:center; justify-content:center;
+  font-size:36px; margin-bottom:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(15,15,15,0.03);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.payment-card.selected .icon-box { transform: scale(1.06); box-shadow: 0 10px 28px rgba(0,0,0,0.25); }
+
+/* CTA group inside each card */
+.cta-row { display:flex; gap:10px; margin-top:10px; width:100%; justify-content:center; }
+.btn {
+  background: linear-gradient(90deg,var(--gt-gold), #e6c871);
+  color:#071224;
+  padding:10px 14px;
+  border-radius:12px;
+  border:0;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow: 0 8px 18px rgba(212,175,55,0.08);
+  transition: transform .14s ease, background .14s ease, color .14s ease;
+  min-width:140px;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn.ghost {
+  background:transparent;
+  border:1px solid rgba(15,15,15,0.06);
+  color:var(--muted);
+  min-width:120px;
+}
+
+/* When the card is selected we invert the primary CTA to white => black text (contrast on dark bg) */
+.payment-card.selected .btn {
+  background: rgba(255,255,255,0.96);
+  color: #071224;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+.payment-card.selected .btn.ghost {
+  border-color: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+  background: transparent;
+}
+
+/* Finger emoji style */
+.finger { margin-right:8px; display:inline-block; transform:translateY(1px); }
+
+/* Merchant detail card */
+.merchant-card { max-width:760px; margin: 18px auto 50px; padding:18px; border-radius:12px; background:var(--card-bg); border:1px solid rgba(15,15,15,0.04); color:#071224; }
+.merchant-card .muted-sm { color:var(--muted); }
+.merchant-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+.merchant-row .inputs { flex:1; min-width:220px; }
+.merchant-input { width:100%; padding:10px;border-radius:10px;border:1px solid rgba(15,15,15,0.06); background: transparent; color:inherit; margin-bottom:8px; }
+
+.muted-sm { color:var(--muted); font-size:13px; }
+
+/* small decorative badge */
+.badge { position:absolute; right:12px; top:12px; padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px; color:#fff; background: linear-gradient(90deg,#3b82f6,#1e3a8a); }
+
+/* ensure the payment-grid shows a subtle scrollbar on overflow for mobile */
+.payment-grid::-webkit-scrollbar { height:8px; }
+.payment-grid::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius:999px; }
+
+/* accessibility: focus outline */
+.payment-card:focus-within { outline: 3px solid rgba(212,175,55,0.12); outline-offset:6px; }
