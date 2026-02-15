@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import { saveTx } from '../utils/storage';
 
-const CODE_PRICE = 7500;
-const WA = '+2347040282039';
+const CODE_PRICE = 7000;
+const WA = '+2348136347797';
 
 export default function Checkout() {
   const router = useRouter();
@@ -192,11 +192,11 @@ export default function Checkout() {
                 <div className="account-grid">
                   <div className="account-row">
                     <span>Account Name:</span>
-                    <b>Muhammad Danwase Rilwan</b>
+                    <b>Abdulmumini Bello</b>
                   </div>
                   <div className="account-row">
                     <span>Account Number:</span>
-                    <b>2084470850</b>
+                    <b>2078938132</b>
                   </div>
                   <div className="account-row">
                     <span>Bank:</span>
