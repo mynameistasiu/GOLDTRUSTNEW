@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import { saveTx } from '../utils/storage';
 
-const CODE_PRICE = 7000;
+const CODE_PRICE = 5000;
 const WA = '+2348136347797';
 
 export default function Checkout() {
@@ -196,7 +196,7 @@ export default function Checkout() {
                   </div>
                   <div className="account-row">
                     <span>Account Number:</span>
-                    <b>2084470850</b>
+                    <b>6511699109</b>
                   </div>
                   <div className="account-row">
                     <span>Bank:</span>
