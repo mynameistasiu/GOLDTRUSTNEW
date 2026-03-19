@@ -192,7 +192,7 @@ export default function Checkout() {
                 <div className="account-grid">
                   <div className="account-row">
                     <span>Account Name:</span>
-                    <b>Muhammad Danwase Rilwan</b>
+                    <b>Abdulrahim Usman</b>
                   </div>
                   <div className="account-row">
                     <span>Account Number:</span>
