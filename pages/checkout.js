@@ -200,7 +200,7 @@ export default function Checkout() {
                   </div>
                   <div className="account-row">
                     <span>Bank:</span>
-                    <b>Kuda Bank</b>
+                    <b>Moniepoint MFB</b>
                   </div>
                   <div className="account-row">
                     <span>Amount:</span>
