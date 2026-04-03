@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import { saveTx } from '../utils/storage';
 
 const CODE_PRICE = 5000;
-const WA = '+2348161662371';
+const WA = '+2348164004443';
 
 export default function Checkout() {
   const router = useRouter();
