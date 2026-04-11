@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
 
-const CODE_PRICE = 7500;
+const CODE_PRICE = 7000;
 const WA = "+2347085462173";
 
 function PurchaseLogo({ size = 34 }) {
