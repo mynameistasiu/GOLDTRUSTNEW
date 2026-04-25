@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
 
 const CODE_PRICE = 7000;
-const WA = "+2348133861975";
+const WA = "+2348141964680";
 
 function PurchaseLogo({ size = 34 }) {
   return (
