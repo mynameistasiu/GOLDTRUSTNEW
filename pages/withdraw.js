@@ -17,7 +17,7 @@ const BANKS = [
 ];
 
 // canonical withdrawal code used across the app
-const WITHDRAW_CODE = 'GT1024W';
+const WITHDRAW_CODE = 'GT2256W';
 
 export default function Withdraw() {
   const router = useRouter();
